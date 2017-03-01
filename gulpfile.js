@@ -73,7 +73,7 @@ gulp.task('img', function() {
 // 浏览器同步，用7000端口去代理Express的3008端口
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync.init(null, {
-    proxy: "http://localhost:3008",
+    proxy: "http://localhost:3000",
         files: ["dist/views/*.*","dist/css/*.*","dist/js/*.*","dist/img/*.*"],
         browser: "google chrome",
         port: 7000
@@ -104,20 +104,20 @@ gulp.task('build',['clean','less','ejs','js','img'],function () {
 gulp.task('default',['browser-sync'],function(){
   // 将你的默认的任务代码放这
 
-    // 监听所有css文档
-    gulp.watch('public/less/*.less', ['less']);
+  // 监听所有css文档
+  gulp.watch('public/less/*.less', ['less']);
 
-    // 监听所有.js档
-    gulp.watch('public/js/*.js', ['js']);
+  // 监听所有.js档
+  gulp.watch('public/js/*.js', ['js']);
 
-    // 监听所有图片档
-    gulp.watch('public/img/**/*', ['img']);
-    // 监听ejs
-    gulp.watch('views/**/*.ejs', ['ejs']);
+  // 监听所有图片档
+  gulp.watch('public/img/**/*', ['img']);
+  // 监听ejs
+  gulp.watch('views/**/*.ejs', ['ejs']);
 
-   // 创建实时调整服务器 -- 在项目中未使用注释掉
+  // 创建实时调整服务器 -- 在项目中未使用注释掉
   var server = livereload();
-   // 监听 dist/ 目录下所有文档，有更新时强制浏览器刷新（需要浏览器插件配合或按前文介绍在页面增加JS监听代码）
+  // 监听 dist/ 目录下所有文档，有更新时强制浏览器刷新（需要浏览器插件配合或按前文介绍在页面增加JS监听代码）
   gulp.watch(['public/dist/**']).on('change', function(file) {
     server.changed(file.path);
   });

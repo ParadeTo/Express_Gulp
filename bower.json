@@ -1,9 +1,9 @@
 {
-  "name": "voteapp",
+  "name": "jishijiao official website",
   "description": "",
   "main": "app.js",
   "authors": [
-    "信鑫-King <45808948@qq.com>"
+    "ayou <332486430@qq.com>"
   ],
   "license": "ISC",
   "homepage": "",
@@ -16,8 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "weui": "^1.1.0",
-    "vue": "^2.1.8",
-    "zepto": "^1.2.0"
+
   }
 }
